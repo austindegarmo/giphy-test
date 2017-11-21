@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Giphy API</title>
+</head>
+
+<body>
+  <div class="container">
+   <div id="gif-view"></div> 
+  <form id="gif-form">
+    <label for="gif-form"></label>
+    <input type="text" id="gif-input"><br>
+    <input id="find-gif" type="submit" value="Gif Search">
+  </form>  
+
+  <!-- <div class="name"></div>
+  <div class="spot"></div>
+  <div class="wind"></div>
+  <div class="wind"></div> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // Example queryURL for Giphy API
+    var APIkey = "dc6zaTOxFJmzC"
+    var queryURL = "http://api.giphy.com/v1/gifs/search?api_key=" + APIkey;
+    
+    event.preventDefault();
+
+    $("#find-gif").on("click", function(event) {
+        
+        var gif = $("#gif-form").val();
+      
+
+    $.ajax({
+      url: queryURL,
+      method: 'GET'
+    }).done(function(response) {
+      $("gif-view").text(JSON.stringify(response));
+
+
+
+    });
+  });  
+  </script>
+</div>
+
+</body>
+
+</html>
