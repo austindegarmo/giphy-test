@@ -2,44 +2,34 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <title>Giphy API</title>
 </head>
 
 <body>
-  <div class="container">
-   <div id="gif-view"></div> 
-    <form id="gif-form">
-      <label for="gif-input"></label>
-      <input type="text" id="gif-place"><br>
-      <input id="find-gif" type="submit" value="Gif Search">
-    </form>  
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript">
-    // Example queryURL for Giphy API
+  <div id="animal-buttons">
     
-    
+  </div>
 
-    $("#find-gif").on("click", function(event) {
-      event.preventDefault();
-      var APIkey = "dc6zaTOxFJmzC"
+      <form id="animal-form">
+        <label for="animal-input">Get Sketch Bum</label>
+        <input type="text" id="animal-input"><br>
 
-      var gif = $("#gif-form").val();
+        <input id="add-animal" type="submit" value="Submit">
+      </form>  
 
-      var queryURL = "http://api.giphy.com/v1/gifs/search?" + gif + "api_key=dc6zaTOxFJmzC";
+      <div id="animals">
+        
+      </div>
 
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).done(function(response) {
-      $("#gif-view").text(JSON.stringify(response));
-    });
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+   
+ </script>
 
-  });  
-  </script>
+ <script src="giphy.js"></script>
+ 
+</body>
 </div>
 
-</body>
 
 </html>
